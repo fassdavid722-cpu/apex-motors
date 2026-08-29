@@ -2,8 +2,9 @@ import Link from "next/link";
 import { cars } from "@/lib/cars";
 import { notFound } from "next/navigation";
 
-export default function CarDetailPage({ params }: { params: { id: string } }) {
-  const car = cars.find((c) => c.id === params.id);
+export default async function CarDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const car = cars.find((c) => c.id === id);
   if (!car) return notFound();
 
   return (
