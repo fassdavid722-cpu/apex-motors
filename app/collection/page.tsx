@@ -3,7 +3,7 @@ import { cars, type Car } from "@/lib/cars";
 
 function CarCard({ car }: { car: Car }) {
   return (
-    <Link href={\`/collection/${car.id}\`} className="group flex flex-col gap-3 p-6 bg-white border border-stone-200 transition-colors hover:border-stone-900">
+    <Link href={`/collection/${car.id}`} className="group flex flex-col gap-3 p-6 bg-white border border-stone-200 transition-colors hover:border-stone-900">
       <div className="aspect-[4/3] w-full flex items-center justify-center" style={{ backgroundColor: car.accent }}>
         <span className="text-stone-50 text-sm tracking-widest uppercase">{car.name}</span>
       </div>
