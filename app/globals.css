@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #050505;
+  color: #e8e6df;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #ff5a1f;
+  color: #050505;
+}
+
+@layer components {
+  .container-edge {
+    @apply mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12;
+  }
+  .h-display {
+    @apply font-display tracking-[0.02em] uppercase;
+  }
+  .h-mono {
+    @apply font-mono uppercase tracking-[0.18em] text-[11px] text-ash;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ember px-6 py-3 text-sm font-semibold uppercase tracking-wider text-ink transition hover:bg-signal hover:text-ink;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-bone transition hover:border-ember hover:text-ember;
+  }
+  .card {
+    @apply rounded-2xl border border-white/10 bg-carbon/70 backdrop-blur;
+  }
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-smoke px-3 py-1 text-[11px] font-mono uppercase tracking-wider text-ash;
+  }
+  .glow-ember {
+    text-shadow: 0 0 24px rgba(255, 90, 31, 0.45);
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}
+
+/* Hide scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
