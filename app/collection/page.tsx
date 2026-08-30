@@ -1,32 +1,41 @@
 import Link from "next/link";
 import { cars, type Car } from "@/lib/cars";
+import Image from "next/image";
 
 function CarCard({ car, index }: { car: Car; index: number }) {
   return (
     <Link
       href={`/collection/${car.id}`}
-      className="group flex flex-col bg-white border border-stone-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in-up"
-      style={{ animationDelay: `${index * 0.05}s`, opacity: 0 }}
+      className="group relative bg-stone-900 rounded-2xl overflow-hidden card-3d animate-fade-in-up"
+      style={{ animationDelay: `${index * 0.08}s`, opacity: 0 }}
     >
-      <div
-        className="aspect-[4/3] w-full flex items-center justify-center relative overflow-hidden"
-        style={{ backgroundColor: car.accent }}
-      >
-        <span className="text-stone-50 text-sm tracking-[0.2em] uppercase opacity-80 group-hover:scale-110 transition-transform duration-500">
-          {car.name}
-        </span>
+      <div className="img-zoom relative aspect-[16/10] overflow-hidden">
+        <Image
+          src={car.image}
+          alt={car.name}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
+        <div className="absolute top-4 left-4">
+          <span className="px-3 py-1 glass text-xs tracking-wide uppercase text-stone-200 rounded-full">
+            {car.category}
+          </span>
+        </div>
       </div>
-      <div className="p-6 flex flex-col gap-2">
-        <span className="text-xs tracking-[0.15em] uppercase text-stone-500">{car.category}</span>
-        <h3 className="text-xl font-medium text-stone-900">{car.name}</h3>
-        <p className="text-sm text-stone-600">{car.tagline}</p>
-        <div className="flex items-baseline justify-between mt-3 pt-3 border-t border-stone-100">
-          <span className="text-lg font-medium text-stone-900">
+      <div className="p-6">
+        <h3 className="text-xl font-medium text-stone-100 mb-1">{car.name}</h3>
+        <p className="text-sm text-stone-400 mb-4">{car.tagline}</p>
+        <div className="flex items-baseline justify-between pt-4 border-t border-stone-800">
+          <span className="text-lg font-medium text-white">
             ${car.price.toLocaleString()}
           </span>
-          <span className="text-xs text-stone-500 tracking-wide">
-            {car.horsepower} hp · {car.year}
-          </span>
+          <div className="flex items-center gap-3 text-xs text-stone-500">
+            <span>{car.horsepower} hp</span>
+            <span className="w-1 h-1 bg-stone-700 rounded-full" />
+            <span>{car.year}</span>
+          </div>
         </div>
       </div>
     </Link>
@@ -38,12 +47,12 @@ export default function CollectionPage() {
   const sorted = [...cars].sort((a, b) => b.price - a.price);
 
   return (
-    <main className="min-h-screen bg-stone-50 pt-20">
+    <main className="bg-stone-950 min-h-screen pt-24">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-16 animate-fade-in">
           <p className="text-xs tracking-[0.3em] uppercase text-stone-500 mb-4">The Collection</p>
-          <h1 className="text-5xl font-light text-stone-900 mb-4">Every motor car</h1>
-          <p className="text-stone-600 max-w-xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-light text-white mb-4">Every motor car</h1>
+          <p className="text-stone-400 max-w-xl mx-auto">
             A curated selection of extraordinary automobiles, each chosen for its
             unique character and driving experience.
           </p>
@@ -53,7 +62,7 @@ export default function CollectionPage() {
           {categories.map((cat) => (
             <span
               key={cat}
-              className="px-4 py-2 text-sm tracking-wide border border-stone-300 text-stone-600 bg-white"
+              className="px-5 py-2 text-sm tracking-wide glass text-stone-300 rounded-full cursor-default hover:bg-white/10 transition-colors"
             >
               {cat}
             </span>
@@ -69,7 +78,7 @@ export default function CollectionPage() {
         <div className="text-center mt-16">
           <p className="text-stone-500 text-sm">
             Don't see what you're looking for?{" "}
-            <Link href="/contact" className="text-stone-900 underline underline-offset-4 hover:text-stone-600">
+            <Link href="/contact" className="text-white link-underline">
               Tell us what you want
             </Link>
           </p>
