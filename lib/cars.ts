@@ -8,6 +8,13 @@ export interface Car {
   accent: string;
   category: string;
   description: string;
+  specs: {
+    engine: string;
+    topSpeed: string;
+    zeroToSixty: string;
+    transmission: string;
+    drivetrain: string;
+  };
 }
 
 export const cars: Car[] = [
@@ -20,7 +27,14 @@ export const cars: Car[] = [
     year: 2018,
     accent: "#D40000",
     category: "Supercar",
-    description: "A twin-turbocharged V8 masterpiece with razor-sharp handling and an exhaust note that defines the marque.",
+    description: "A twin-turbocharged V8 masterpiece with razor-sharp handling and an exhaust note that defines the marque. The 488 GTB returned Ferrari to turbocharging, but you'd never know it from behind the wheel — the throttle response is instantaneous, the balance telepathic, and the sound unmistakably Maranello.",
+    specs: {
+      engine: "3.9L Twin-Turbo V8",
+      topSpeed: "205 mph",
+      zeroToSixty: "3.0 seconds",
+      transmission: "7-speed DCT",
+      drivetrain: "Rear-wheel drive",
+    },
   },
   {
     id: "aston-martin-db11",
@@ -31,7 +45,14 @@ export const cars: Car[] = [
     year: 2019,
     accent: "#1a2a3a",
     category: "Grand Tourer",
-    description: "Effortless continent-crossing capability wrapped in timeless British elegance.",
+    description: "Effortless continent-crossing capability wrapped in timeless British elegance. The DB11 is the car that proved Aston Martin could build a grand tourer for the modern era — beautiful, powerful, and refined in a way that only comes from decades of experience.",
+    specs: {
+      engine: "4.0L Twin-Turbo V8",
+      topSpeed: "187 mph",
+      zeroToSixty: "3.9 seconds",
+      transmission: "8-speed automatic",
+      drivetrain: "Rear-wheel drive",
+    },
   },
   {
     id: "porsche-911-gt3",
@@ -42,7 +63,14 @@ export const cars: Car[] = [
     year: 2022,
     accent: "#2a2a2a",
     category: "Sports Car",
-    description: "A naturally aspirated flat-six and suspension tuned at the Nürburgring. Pure driving focus.",
+    description: "A naturally aspirated flat-six and suspension tuned at the Nürburgring. Pure driving focus distilled into the most complete 911 there has ever been. No turbochargers, no hybrid assistance, just precision engineering and a 9,000 rpm redline that makes every journey feel like a lap.",
+    specs: {
+      engine: "4.0L Naturally Aspirated Flat-6",
+      topSpeed: "198 mph",
+      zeroToSixty: "3.2 seconds",
+      transmission: "7-speed PDK",
+      drivetrain: "Rear-wheel drive",
+    },
   },
   {
     id: "lamborghini-huracan",
@@ -53,7 +81,14 @@ export const cars: Car[] = [
     year: 2021,
     accent: "#FFD700",
     category: "Supercar",
-    description: "V10 fury with rear-wheel steering and torque vectoring. Theater on four wheels.",
+    description: "V10 fury with rear-wheel steering and torque vectoring. Theater on four wheels. The Huracán EVO takes everything that made the original Huracán great and adds a level of electronic sophistication that makes its ferocity accessible. It's a supercar that feels alive in a way few others do.",
+    specs: {
+      engine: "5.2L Naturally Aspirated V10",
+      topSpeed: "202 mph",
+      zeroToSixty: "2.9 seconds",
+      transmission: "7-speed DCT",
+      drivetrain: "All-wheel drive",
+    },
   },
   {
     id: "mclaren-720s",
@@ -64,7 +99,14 @@ export const cars: Car[] = [
     year: 2020,
     accent: "#FF6600",
     category: "Supercar",
-    description: "Twin-turbo V8 in a carbon fiber monocoque. The science of speed, made beautiful.",
+    description: "Twin-turbo V8 in a carbon fiber monocoque. The science of speed, made beautiful. The 720S looks like nothing else because it's designed around a single principle: moving through air as efficiently as possible. The result is a car that feels weightless, regardless of speed.",
+    specs: {
+      engine: "4.0L Twin-Turbo V8",
+      topSpeed: "212 mph",
+      zeroToSixty: "2.8 seconds",
+      transmission: "7-speed DCT",
+      drivetrain: "Rear-wheel drive",
+    },
   },
   {
     id: "bentley-continental-gt",
@@ -75,6 +117,13 @@ export const cars: Car[] = [
     year: 2021,
     accent: "#3d4a3a",
     category: "Grand Tourer",
-    description: "W12 power, hand-stitched leather, and a cabin that cocoons you in British luxury.",
+    description: "W12 power, hand-stitched leather, and a cabin that cocoons you in British luxury. The Continental GT proves that 200+ mph performance and genuine comfort are not mutually exclusive. It's a car that can tear across a continent at triple-digit speeds and then glide into a valet with quiet authority.",
+    specs: {
+      engine: "6.0L Twin-Turbo W12",
+      topSpeed: "208 mph",
+      zeroToSixty: "3.5 seconds",
+      transmission: "8-speed DCT",
+      drivetrain: "All-wheel drive",
+    },
   },
 ];
