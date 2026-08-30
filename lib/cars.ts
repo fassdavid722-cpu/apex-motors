@@ -10,6 +10,7 @@ export interface Car {
   category: string;
   description: string;
   image: string;
+  angles?: string[];
   specs: {
     engine: string;
     topSpeed: string;
@@ -34,6 +35,7 @@ export const cars: Car[] = [
     category: "Supercar",
     description: "A twin-turbocharged V8 masterpiece with razor-sharp handling and an exhaust note that defines the marque. The 488 GTB returned Ferrari to turbocharging, but you'd never know it from behind the wheel — the throttle response is instantaneous, the balance telepathic, and the sound unmistakably Maranello.",
     image: "https://media.base44.com/images/public/6a89983c4daa4f48e2fd69e6/cca2209eb_generated_image.png",
+    angles: ["https://media.base44.com/images/public/6a89983c4daa4f48e2fd69e6/cbb61e088_generated_image.png", "https://media.base44.com/images/public/6a89983c4daa4f48e2fd69e6/912c68671_generated_image.png", "https://media.base44.com/images/public/6a89983c4daa4f48e2fd69e6/720ec0d34_generated_image.png", "https://media.base44.com/images/public/6a89983c4daa4f48e2fd69e6/f29faf588_generated_image.png", "https://media.base44.com/images/public/6a89983c4daa4f48e2fd69e6/43a3cbe6f_generated_image.png", "https://media.base44.com/images/public/6a89983c4daa4f48e2fd69e6/30ed69706_generated_image.png"],
     specs: {
       engine: "3.9L Twin-Turbo V8",
       topSpeed: "205 mph",
