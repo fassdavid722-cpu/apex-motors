@@ -13,39 +13,25 @@ export default function Footer() {
               <span className="text-lg font-light tracking-[0.25em] uppercase text-stone-200">Apex Motors</span>
             </div>
             <p className="text-sm text-stone-500 leading-relaxed max-w-sm">
-              A boutique dealership of extraordinary automobiles. Every car is
-              hand-selected for character, performance, and the way it makes you
-              feel behind the wheel.
+              A boutique dealership of extraordinary automobiles. Every car is hand-selected for character, performance, and the way it makes you feel behind the wheel.
             </p>
           </div>
-
           <div>
             <h4 className="text-xs tracking-[0.2em] uppercase text-stone-600 mb-5">Explore</h4>
             <div className="flex flex-col gap-3">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/collection", label: "Collection" },
-                { href: "/about", label: "About Us" },
-                { href: "/contact", label: "Enquire" },
-              ].map((l) => (
-                <Link key={l.href} href={l.href} className="text-sm text-stone-400 hover:text-white transition-colors">
-                  {l.label}
-                </Link>
+              {[{h:"/",l:"Home"},{h:"/collection",l:"Collection"},{h:"/about",l:"About Us"},{h:"/contact",l:"Enquire"}].map((l) => (
+                <Link key={l.h} href={l.h} className="text-sm text-stone-400 hover:text-white transition-colors">{l.l}</Link>
               ))}
             </div>
           </div>
-
           <div>
             <h4 className="text-xs tracking-[0.2em] uppercase text-stone-600 mb-5">Contact</h4>
             <div className="flex flex-col gap-3 text-sm text-stone-500">
-              <p>By appointment only</p>
-              <p>Mayfair, London</p>
-              <p>+44 20 7946 0000</p>
+              <p>By appointment only</p><p>Mayfair, London</p><p>+44 20 7946 0000</p>
               <p className="text-stone-600">enquiries@apexmotors.example</p>
             </div>
           </div>
         </div>
-
         <div className="mt-16 pt-8 border-t border-stone-900 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-stone-700">© 2026 Apex Motors. All rights reserved.</p>
           <p className="text-xs text-stone-700">Designed and built with intention.</p>
