@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-stone-50 pt-20">
+    <main className="bg-stone-950 min-h-screen pt-20">
       <div className="max-w-2xl mx-auto px-6 py-16">
         <div className="text-center mb-16 animate-fade-in">
           <p className="text-xs tracking-[0.3em] uppercase text-stone-500 mb-4">Enquiries</p>
-          <h1 className="text-5xl font-light text-stone-900 mb-4">Get in touch</h1>
-          <p className="text-stone-600 max-w-md mx-auto">
+          <h1 className="text-5xl font-light text-white mb-4">Get in touch</h1>
+          <p className="text-stone-400 max-w-md mx-auto">
             All viewings are by appointment. Tell us what you're looking for and we'll
             get back to you within 24 hours.
           </p>
@@ -15,37 +15,37 @@ export default function ContactPage() {
 
         <form className="space-y-6 animate-fade-in-up stagger-1" style={{ opacity: 0 }}>
           <div>
-            <label className="text-sm text-stone-600 tracking-wide mb-2 block">Full Name</label>
+            <label className="text-sm text-stone-400 tracking-wide mb-2 block">Full Name</label>
             <input
               type="text"
               required
-              className="w-full px-4 py-3 border border-stone-300 bg-white text-stone-900 focus:outline-none focus:border-stone-900 transition-colors"
+              className="w-full px-4 py-3 bg-stone-900 border border-stone-800 text-stone-100 focus:outline-none focus:border-stone-600 transition-colors rounded-xl"
               placeholder="James Marchetti"
             />
           </div>
 
           <div>
-            <label className="text-sm text-stone-600 tracking-wide mb-2 block">Email Address</label>
+            <label className="text-sm text-stone-400 tracking-wide mb-2 block">Email Address</label>
             <input
               type="email"
               required
-              className="w-full px-4 py-3 border border-stone-300 bg-white text-stone-900 focus:outline-none focus:border-stone-900 transition-colors"
+              className="w-full px-4 py-3 bg-stone-900 border border-stone-800 text-stone-100 focus:outline-none focus:border-stone-600 transition-colors rounded-xl"
               placeholder="james@example.com"
             />
           </div>
 
           <div>
-            <label className="text-sm text-stone-600 tracking-wide mb-2 block">Phone (optional)</label>
+            <label className="text-sm text-stone-400 tracking-wide mb-2 block">Phone (optional)</label>
             <input
               type="tel"
-              className="w-full px-4 py-3 border border-stone-300 bg-white text-stone-900 focus:outline-none focus:border-stone-900 transition-colors"
+              className="w-full px-4 py-3 bg-stone-900 border border-stone-800 text-stone-100 focus:outline-none focus:border-stone-600 transition-colors rounded-xl"
               placeholder="+44 20 7946 0000"
             />
           </div>
 
           <div>
-            <label className="text-sm text-stone-600 tracking-wide mb-2 block">I'm interested in</label>
-            <select className="w-full px-4 py-3 border border-stone-300 bg-white text-stone-900 focus:outline-none focus:border-stone-900 transition-colors">
+            <label className="text-sm text-stone-400 tracking-wide mb-2 block">I'm interested in</label>
+            <select className="w-full px-4 py-3 bg-stone-900 border border-stone-800 text-stone-100 focus:outline-none focus:border-stone-600 transition-colors rounded-xl">
               <option value="">Select a car (or "General enquiry")</option>
               <option>General enquiry</option>
               <option>Ferrari 488 GTB</option>
@@ -58,40 +58,38 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label className="text-sm text-stone-600 tracking-wide mb-2 block">Message</label>
+            <label className="text-sm text-stone-400 tracking-wide mb-2 block">Message</label>
             <textarea
               rows={5}
               required
-              className="w-full px-4 py-3 border border-stone-300 bg-white text-stone-900 focus:outline-none focus:border-stone-900 transition-colors resize-none"
+              className="w-full px-4 py-3 bg-stone-900 border border-stone-800 text-stone-100 focus:outline-none focus:border-stone-600 transition-colors rounded-xl resize-none"
               placeholder="Tell us what you're looking for, or ask any question you might have."
             />
           </div>
 
           <button
             type="submit"
-            className="w-full px-8 py-4 bg-stone-900 text-stone-50 text-sm tracking-wide hover:bg-stone-700 transition-colors"
+            className="w-full px-8 py-4 bg-white text-stone-950 text-sm tracking-wide hover:bg-stone-200 transition-colors rounded-full"
           >
             Send enquiry
           </button>
         </form>
 
-        <div className="mt-16 pt-8 border-t border-stone-200 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-          <div>
-            <p className="text-xs tracking-wide uppercase text-stone-500 mb-2">Location</p>
-            <p className="text-sm text-stone-700">Mayfair, London</p>
-          </div>
-          <div>
-            <p className="text-xs tracking-wide uppercase text-stone-500 mb-2">Phone</p>
-            <p className="text-sm text-stone-700">+44 20 7946 0000</p>
-          </div>
-          <div>
-            <p className="text-xs tracking-wide uppercase text-stone-500 mb-2">Email</p>
-            <p className="text-sm text-stone-700">enquiries@apexmotors.example</p>
-          </div>
+        <div className="mt-16 pt-8 border-t border-stone-800 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+          {[
+            { label: "Location", value: "Mayfair, London" },
+            { label: "Phone", value: "+44 20 7946 0000" },
+            { label: "Email", value: "enquiries@apexmotors.example" },
+          ].map((item, i) => (
+            <div key={i}>
+              <p className="text-xs tracking-wide uppercase text-stone-600 mb-2">{item.label}</p>
+              <p className="text-sm text-stone-300">{item.value}</p>
+            </div>
+          ))}
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/collection" className="text-sm text-stone-500 hover:text-stone-900">
+          <Link href="/collection" className="text-sm text-stone-500 hover:text-white transition-colors">
             ← Back to collection
           </Link>
         </div>
