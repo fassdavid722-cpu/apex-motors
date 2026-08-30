@@ -5,13 +5,12 @@ import { cars, type Car } from '@/lib/cars';
 function CarCard({ car }: { car: Car }) {
   return (
     <article className="group flex flex-col gap-3 p-6 bg-white border border-stone-200 transition-colors hover:border-stone-900">
-      <div
-        className="aspect-[4/3] w-full bg-stone-100 flex items-center justify-center"
-        style={{ backgroundColor: car.accent }}
-      >
-        <span className="text-stone-50 text-sm tracking-widest uppercase">
-          {car.name}
-        </span>
+      <div className="aspect-[4/3] w-full overflow-hidden rounded-md">
+        <img
+          src={`/images/${car.id}.jpg`}
+          alt={car.name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
       <div className="flex flex-col gap-1">
         <h3 className="text-xl font-medium text-stone-900">{car.name}</h3>
@@ -67,8 +66,14 @@ export default function Home() {
     <main className="min-h-screen bg-stone-50">
       <section className="relative min-h-[80vh] flex items-center justify-center">
         <HomeContent />
+        {/* Hero background image */}
+        <img
+          src="/images/hero.jpg"
+          alt="Apex Motors hero"
+          className="absolute inset-0 w-full h-full object-cover opacity-5 blur-2xl"
+        />
       </section>
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto px-6 py-20 relative-z-10">
         <div className="flex items-baseline justify-between mb-10">
           <h2 className="text-3xl font-light text-stone-900">
             Featured motor cars
