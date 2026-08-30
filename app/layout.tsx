@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Apex Motors — Premium Luxury & Performance Cars",
-  description: "A small, considered collection of grand tourers, spiders, and coupés — each one chosen for the way it drives, not the way it advertises.",
+  description: "A curated collection of extraordinary automobiles — grand tourers, supercars, and coupés, hand-selected for the way they drive.",
   openGraph: {
     title: "Apex Motors — Premium Luxury & Performance Cars",
     description: "A curated collection of extraordinary automobiles.",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-stone-950 text-stone-100">
         <Navbar />
         {children}
         <Footer />
